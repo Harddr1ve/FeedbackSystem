@@ -50,22 +50,9 @@ namespace FeedbackSystem
 
         protected void DeleteUserBtn_Click(object sender, EventArgs e)
         {
-            FeedbackModelContainer model = new FeedbackModelContainer();
-            Guid id = (Guid)Session["UserID"];
-            User user = (from u in model.UserSet
-                         where u.Id == id
-                         select u).First();
-            IQueryable<Feedback> feedbacks =
-                        from f in model.FeedbackSet
-                        where f.User.Id == id
-                        select f;
-            foreach (Feedback feedback in feedbacks)
-            {
-                model.FeedbackSet.Remove(feedback);
-            }
-            model.UserSet.Remove(user);
-            model.SaveChanges();
-            Response.Redirect("/");
+            ConfirmBtn.Visible = true;
+            CancelBtn.Visible = true;
+            DeleteUserBtn.Visible = false;
         }
 
         protected void AddFeedbackBtn_Click(object sender, EventArgs e)
@@ -88,6 +75,32 @@ namespace FeedbackSystem
 
             model.SaveChanges();
             Response.Redirect("/EditUser.aspx?Id=" + id.ToString());
+        }
+
+        protected void ConfirmBtn_Click(object sender, EventArgs e)
+        {
+            FeedbackModelContainer model = new FeedbackModelContainer();
+            Guid id = (Guid)Session["UserID"];
+            User user = (from u in model.UserSet
+                         where u.Id == id
+                         select u).First();
+            IQueryable<Feedback> feedbacks =
+                        from f in model.FeedbackSet
+                        where f.User.Id == id
+                        select f;
+            foreach (Feedback feedback in feedbacks)
+            {
+                model.FeedbackSet.Remove(feedback);
+            }
+            model.UserSet.Remove(user);
+            model.SaveChanges();
+            Response.Redirect("/");
+        }
+
+        protected void CancelBtn_Click(object sender, EventArgs e)
+        {
+            ConfirmBtn.Visible = false;
+            DeleteUserBtn.Visible = true;
         }
     }
 }

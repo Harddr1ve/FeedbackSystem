@@ -69,6 +69,24 @@ namespace FeedbackSystem
         protected global::System.Web.UI.WebControls.Button DeleteUserBtn;
 
         /// <summary>
+        /// ConfirmBtn элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ConfirmBtn;
+
+        /// <summary>
+        /// CancelBtn элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CancelBtn;
+
+        /// <summary>
         /// ShortDescTxt элемент управления.
         /// </summary>
         /// <remarks>
