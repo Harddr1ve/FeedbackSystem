@@ -18,5 +18,10 @@ namespace FeedbackSystem
                                    select User).ToList();
             Page.DataBind();
         }
+
+        protected void AddUserBtn_Click(object sender, EventArgs e)
+        {
+            Page.Response.Redirect("/AddUser.aspx");
+        }
     }
 }

@@ -8,9 +8,8 @@
     </p>
     <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="AddUserBtn" runat="server" Text="Добавить пользователя" />
+        <asp:Button ID="AddUserBtn" runat="server" Text="Добавить пользователя" OnClick="AddUserBtn_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="ShowAllFeedbacks" runat="server" Text="Показать все отзывы" />
         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" AutoGenerateColumns ="false">
             <Columns>
                 <asp:BoundField DataField="LastName" HeaderText="Фамилия" />

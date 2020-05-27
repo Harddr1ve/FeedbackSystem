@@ -24,15 +24,6 @@ namespace FeedbackSystem
         protected global::System.Web.UI.WebControls.Button AddUserBtn;
 
         /// <summary>
-        /// ShowAllFeedbacks элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ShowAllFeedbacks;
-
-        /// <summary>
         /// GridView1 элемент управления.
         /// </summary>
         /// <remarks>
