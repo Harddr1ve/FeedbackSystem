@@ -36,7 +36,7 @@
         </p>
         <p>
             &nbsp; Жалоба&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:CheckBox ID="Negative" runat="server" Font-Names="Arial" ForeColor="White" OnCheckedChanged="Negative_CheckedChanged" />
+            <asp:CheckBox ID="Negative" runat="server" Font-Names="Arial" ForeColor="White" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
         <p>
