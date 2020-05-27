@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7ddbcdaf8244453aa86079674dc1d935" Name="Diagram1" >
+        <EntityTypeShape EntityType="FeedbackModel.User" Width="1.5" PointX="4" PointY="2.625" />
+        <EntityTypeShape EntityType="FeedbackModel.Feedback" Width="1.5" PointX="8.75" PointY="2.75" />
+        <AssociationConnector Association="FeedbackModel.UserFeedback" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
