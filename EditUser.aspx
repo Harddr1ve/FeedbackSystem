@@ -52,12 +52,20 @@
         <p>
             &nbsp; &nbsp;</p>
         <p>
-            <asp:GridView ID="FeedbackGrid" runat="server" CellPadding="4" ForeColor="#333333" AutoGenerateColumns ="false">
+            <asp:GridView ID="FeedbackGrid" runat="server" CellPadding="4" ForeColor="#333333" AutoGenerateColumns ="false"
+                OnRowCommand="FeedbackGrid_RowCommand" DataKeyNames="ID" >
                 <Columns>
+                    <asp:BoundField DataField="Id" HeaderText="Id Отзыва" />
+                    <asp:BoundField DataField="UserId" HeaderText="Id Пользователя" />
                     <asp:BoundField DataField="ShortDesc" HeaderText="Краткое Описание" />
                     <asp:BoundField DataField="LongDesc" HeaderText="Полное Описание" />
                     <asp:BoundField DataField="Date" HeaderText="Дата создания" />
                     <asp:BoundField DataField="Positive" HeaderText="Жалоба" />
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lnkdelete" runat="server" CommandName="Delete" CommandArgument='<%#Eval("ID")%>'>Delete</asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />

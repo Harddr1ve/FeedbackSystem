@@ -1,8 +1,11 @@
 ﻿using FeedbackSystem.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -30,6 +33,23 @@ namespace FeedbackSystem
                                            where f.User.Id == id
                                            select f).ToList();
                 FeedbackGrid.DataBind();
+            }
+        }
+
+
+        protected void FeedbackGrid_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Delete")
+            {
+                FeedbackModelContainer model = new FeedbackModelContainer();
+                Guid DeleteId = new Guid((string)e.CommandArgument);
+                Guid id = (Guid)Session["UserID"];
+                Feedback feedback = (from u in model.FeedbackSet
+                             where u.Id == DeleteId
+                             select u).First();
+                model.FeedbackSet.Remove(feedback);
+                model.SaveChanges();
+                Response.Redirect("/EditUser.aspx?Id=" + id.ToString());
             }
         }
 
