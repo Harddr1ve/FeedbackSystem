@@ -47,5 +47,47 @@ namespace FeedbackSystem
             model.SaveChanges();
             Page.Response.Redirect("/");
         }
+
+        protected void DeleteUserBtn_Click(object sender, EventArgs e)
+        {
+            FeedbackModelContainer model = new FeedbackModelContainer();
+            Guid id = (Guid)Session["UserID"];
+            User user = (from u in model.UserSet
+                         where u.Id == id
+                         select u).First();
+            IQueryable<Feedback> feedbacks =
+                        from f in model.FeedbackSet
+                        where f.User.Id == id
+                        select f;
+            foreach (Feedback feedback in feedbacks)
+            {
+                model.FeedbackSet.Remove(feedback);
+            }
+            model.UserSet.Remove(user);
+            model.SaveChanges();
+            Response.Redirect("/");
+        }
+
+        protected void AddFeedbackBtn_Click(object sender, EventArgs e)
+        {
+            FeedbackModelContainer model = new FeedbackModelContainer();
+            Guid id = (Guid)Session["UserID"];
+            User user = (from u in model.UserSet
+                         where u.Id == id
+                         select u).First();
+            Feedback feedback = new Feedback
+            {
+                Id = Guid.NewGuid(),
+                ShortDesc = ShortDescTxt.Text.Trim(),
+                LongDesc = LongDescTxt.Text.Trim(),
+                Date = DateTime.Now.ToString("g"),
+                Positive = Negative.Checked
+            };
+
+            user.Feedback.Add(feedback);
+
+            model.SaveChanges();
+            Response.Redirect("/EditUser.aspx?Id=" + id.ToString());
+        }
     }
 }

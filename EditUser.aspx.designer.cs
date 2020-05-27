@@ -60,6 +60,51 @@ namespace FeedbackSystem
         protected global::System.Web.UI.WebControls.Button SaveBtn;
 
         /// <summary>
+        /// DeleteUserBtn элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteUserBtn;
+
+        /// <summary>
+        /// ShortDescTxt элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ShortDescTxt;
+
+        /// <summary>
+        /// LongDescTxt элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LongDescTxt;
+
+        /// <summary>
+        /// Negative элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox Negative;
+
+        /// <summary>
+        /// AddFeedbackBtn элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddFeedbackBtn;
+
+        /// <summary>
         /// FeedbackGrid элемент управления.
         /// </summary>
         /// <remarks>

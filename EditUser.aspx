@@ -21,11 +21,38 @@
     </p>
     <p>
         &nbsp;&nbsp;<asp:Button ID="SaveBtn" runat="server" OnClick="SaveBtn_Click" Text="Сохранить" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="DeleteUserBtn" runat="server" OnClick="DeleteUserBtn_Click" Text="Удалить пользователя" />
     </p>
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Список отзывов и предложений&nbsp;</p>
         <p>
-            <asp:GridView ID="FeedbackGrid" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="252px" Width="670px">
+            &nbsp; Краткое описание&nbsp;
+            <asp:TextBox ID="ShortDescTxt" runat="server" Height="48px" Width="194px"></asp:TextBox>
+        </p>
+        <p>
+            &nbsp; Полное описание&nbsp;&nbsp;
+            <asp:TextBox ID="LongDescTxt" runat="server" Height="48px" Width="516px"></asp:TextBox>
+        </p>
+        <p>
+            &nbsp; Жалоба&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:CheckBox ID="Negative" runat="server" Font-Names="Arial" ForeColor="White" OnCheckedChanged="Negative_CheckedChanged" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+        <p>
+            &nbsp;&nbsp;
+            <asp:Button ID="AddFeedbackBtn" runat="server" OnClick="AddFeedbackBtn_Click" Text="Добавить отзыв" />
+        </p>
+        <p>
+            &nbsp; &nbsp;</p>
+        <p>
+            <asp:GridView ID="FeedbackGrid" runat="server" CellPadding="4" ForeColor="#333333" AutoGenerateColumns ="false">
+                <Columns>
+                    <asp:BoundField DataField="ShortDesc" HeaderText="Краткое Описание" />
+                    <asp:BoundField DataField="LongDesc" HeaderText="Полное Описание" />
+                    <asp:BoundField DataField="Date" HeaderText="Дата создания" />
+                    <asp:BoundField DataField="Positive" HeaderText="Жалоба" />
+                </Columns>
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -39,6 +66,8 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
     </p>
+        <p>
+            &nbsp;</p>
     <p>
         &nbsp;</p>
 </asp:Content>
